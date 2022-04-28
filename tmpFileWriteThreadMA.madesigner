@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_V1DzkBbeEeKd0rqyHZYMGA" modelName="top" defined="true" sourceFileRelativePath="tmpFileWriteThreadMA.ma">
+    <ports xmi:type="CoupledPort" xmi:id="_V1DzkRbeEeKd0rqyHZYMGA" portName="dataOut" portType="OUTPUT_PORT" incomingLinks="_V1DzmxbeEeKd0rqyHZYMGA"/>
+    <ports xmi:type="CoupledPort" xmi:id="_V1DzkhbeEeKd0rqyHZYMGA" portName="storeData" outgoingLinks="_V1DzmhbeEeKd0rqyHZYMGA"/>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_V1DzkxbeEeKd0rqyHZYMGA" instanceName="tmpfilewritethread">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_V1DzlBbeEeKd0rqyHZYMGA" modelName="TmpFileWriteThread" defined="true" sourceFileRelativePath="tmpFileThread.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_V1DzlRbeEeKd0rqyHZYMGA" portName="storeData" incomingLinks="_V1DzmhbeEeKd0rqyHZYMGA"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_V1DzlhbeEeKd0rqyHZYMGA" portName="dataOut" portType="OUTPUT_PORT"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_V1DzlxbeEeKd0rqyHZYMGA" portName="deleteData"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_V1DzmBbeEeKd0rqyHZYMGA" portName="requestData"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_V1DzmRbeEeKd0rqyHZYMGA" portName="dataOut" portType="OUTPUT_PORT" outgoingLinks="_V1DzmxbeEeKd0rqyHZYMGA"/>
+      </modelType>
+    </atomicModels>
+    <links xmi:type="CoupledLink" xmi:id="_V1DzmhbeEeKd0rqyHZYMGA" target="_V1DzlRbeEeKd0rqyHZYMGA" source="_V1DzkhbeEeKd0rqyHZYMGA"/>
+    <links xmi:type="CoupledLink" xmi:id="_V1DzmxbeEeKd0rqyHZYMGA" target="_V1DzkRbeEeKd0rqyHZYMGA" source="_V1DzmRbeEeKd0rqyHZYMGA"/>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_V1DznBbeEeKd0rqyHZYMGA" type="DEVS" element="_V1DzkBbeEeKd0rqyHZYMGA" name="tmpFileWriteThreadMA.madesigner" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_V1DznRbeEeKd0rqyHZYMGA"/>
+  </notation:Diagram>
+</xmi:XMI>

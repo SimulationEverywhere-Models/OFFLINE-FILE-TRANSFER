@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_wWPhYhiNEeKgyLVHum0cvg" modelName="top" defined="true" sourceFileRelativePath="tmpFileReadThreadMA.ma">
+    <ports xmi:type="CoupledPort" xmi:id="_wWPhYxiNEeKgyLVHum0cvg" portName="dataOut" portType="OUTPUT_PORT" incomingLinks="_wWPhbxiNEeKgyLVHum0cvg"/>
+    <ports xmi:type="CoupledPort" xmi:id="_wWPhZBiNEeKgyLVHum0cvg" portName="deleteData" outgoingLinks="_wWPhbRiNEeKgyLVHum0cvg"/>
+    <ports xmi:type="CoupledPort" xmi:id="_wWPhZRiNEeKgyLVHum0cvg" portName="requestData" outgoingLinks="_wWPhbhiNEeKgyLVHum0cvg"/>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_wWPhZhiNEeKgyLVHum0cvg" instanceName="tmpfilereadthread">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_wWPhZxiNEeKgyLVHum0cvg" modelName="TmpFileReadThread" defined="true" sourceFileRelativePath="tmpFileThread.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_wWPhahiNEeKgyLVHum0cvg" portName="deleteData" incomingLinks="_wWPhbRiNEeKgyLVHum0cvg"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_wWPhaxiNEeKgyLVHum0cvg" portName="requestData" incomingLinks="_wWPhbhiNEeKgyLVHum0cvg"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_wWPhbBiNEeKgyLVHum0cvg" portName="dataOut" portType="OUTPUT_PORT" outgoingLinks="_wWPhbxiNEeKgyLVHum0cvg"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_DQMC4RiOEeKLGLOLefhziw" portName="storeData"/>
+      </modelType>
+    </atomicModels>
+    <links xmi:type="CoupledLink" xmi:id="_wWPhbRiNEeKgyLVHum0cvg" target="_wWPhahiNEeKgyLVHum0cvg" source="_wWPhZBiNEeKgyLVHum0cvg"/>
+    <links xmi:type="CoupledLink" xmi:id="_wWPhbhiNEeKgyLVHum0cvg" target="_wWPhaxiNEeKgyLVHum0cvg" source="_wWPhZRiNEeKgyLVHum0cvg"/>
+    <links xmi:type="CoupledLink" xmi:id="_wWPhbxiNEeKgyLVHum0cvg" target="_wWPhYxiNEeKgyLVHum0cvg" source="_wWPhbBiNEeKgyLVHum0cvg"/>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_wWicUBiNEeKgyLVHum0cvg" type="DEVS" element="_wWPhYhiNEeKgyLVHum0cvg" name="tmpFileReadThreadMA.madesigner" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_wc7_QBiNEeKgyLVHum0cvg" type="2002" element="_wWPhYxiNEeKgyLVHum0cvg">
+      <children xmi:type="notation:Node" xmi:id="_wc7_RRiNEeKgyLVHum0cvg" type="5005"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_wc7_QRiNEeKgyLVHum0cvg"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_wc7_QhiNEeKgyLVHum0cvg"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_wc7_QxiNEeKgyLVHum0cvg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wc7_RBiNEeKgyLVHum0cvg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_wc7_RhiNEeKgyLVHum0cvg" type="2002" element="_wWPhZBiNEeKgyLVHum0cvg">
+      <children xmi:type="notation:Node" xmi:id="_wc7_SxiNEeKgyLVHum0cvg" type="5005"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_wc7_RxiNEeKgyLVHum0cvg"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_wc7_SBiNEeKgyLVHum0cvg"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_wc7_SRiNEeKgyLVHum0cvg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wc7_ShiNEeKgyLVHum0cvg" x="110"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_wc7_TBiNEeKgyLVHum0cvg" type="2002" element="_wWPhZRiNEeKgyLVHum0cvg">
+      <children xmi:type="notation:Node" xmi:id="_wc7_URiNEeKgyLVHum0cvg" type="5005"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_wc7_TRiNEeKgyLVHum0cvg"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_wc7_ThiNEeKgyLVHum0cvg"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_wc7_TxiNEeKgyLVHum0cvg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wc7_UBiNEeKgyLVHum0cvg" x="220"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_wdFwQBiNEeKgyLVHum0cvg" type="2003" element="_wWPhZhiNEeKgyLVHum0cvg">
+      <children xmi:type="notation:Node" xmi:id="_wdFwQxiNEeKgyLVHum0cvg" type="5007"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_wdFwQRiNEeKgyLVHum0cvg" fontName="Segoe UI"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wdFwQhiNEeKgyLVHum0cvg" x="585" y="300"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_wWicURiNEeKgyLVHum0cvg"/>
+  </notation:Diagram>
+</xmi:XMI>

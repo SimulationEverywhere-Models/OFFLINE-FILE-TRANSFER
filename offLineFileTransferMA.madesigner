@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_fCWpoBiLEeKhlde44nL67A" modelName="top" defined="true" sourceFileRelativePath="offLineFileTransferMA.ma">
+    <ports xmi:type="CoupledPort" xmi:id="_fCWpoRiLEeKhlde44nL67A" portName="fileSent" portType="OUTPUT_PORT" incomingLinks="_fCf0DhiLEeKhlde44nL67A"/>
+    <ports xmi:type="CoupledPort" xmi:id="_fCWpohiLEeKhlde44nL67A" portName="ackReceived" portType="OUTPUT_PORT" incomingLinks="_fCf0DxiLEeKhlde44nL67A"/>
+    <ports xmi:type="CoupledPort" xmi:id="_fCWpoxiLEeKhlde44nL67A" portName="outData" portType="OUTPUT_PORT" incomingLinks="_fCf0EBiLEeKhlde44nL67A"/>
+    <ports xmi:type="CoupledPort" xmi:id="_fCfzkBiLEeKhlde44nL67A" portName="controlIn" outgoingLinks="_fCf0CRiLEeKhlde44nL67A"/>
+    <ports xmi:type="CoupledPort" xmi:id="_fCfzkRiLEeKhlde44nL67A" portName="requestIn" outgoingLinks="_fCf0ERiLEeKhlde44nL67A"/>
+    <coupledModels xmi:type="CoupledModelInstance" xmi:id="_fCfzkhiLEeKhlde44nL67A" instanceName="Network">
+      <modelType xmi:type="CoupledModelType" xmi:id="_fCfzkxiLEeKhlde44nL67A" modelName="Network">
+        <ports xmi:type="CoupledPort" xmi:id="_fCfzlBiLEeKhlde44nL67A" portName="inAtoN" incomingLinks="_fCf0ChiLEeKhlde44nL67A" outgoingLinks="_fCfz7hiLEeKhlde44nL67A"/>
+        <ports xmi:type="CoupledPort" xmi:id="_fCfzlRiLEeKhlde44nL67A" portName="inBToN" incomingLinks="_fCf0DBiLEeKhlde44nL67A" outgoingLinks="_fCfz8BiLEeKhlde44nL67A"/>
+        <ports xmi:type="CoupledPort" xmi:id="_fCfzlhiLEeKhlde44nL67A" portName="requestIn" incomingLinks="_fCf0ERiLEeKhlde44nL67A" outgoingLinks="_fCfz9hiLEeKhlde44nL67A"/>
+        <ports xmi:type="CoupledPort" xmi:id="_fCfzlxiLEeKhlde44nL67A" portName="outNToA" portType="OUTPUT_PORT" incomingLinks="_fCfz7xiLEeKhlde44nL67A" outgoingLinks="_fCf0DRiLEeKhlde44nL67A"/>
+        <ports xmi:type="CoupledPort" xmi:id="_fCfzmBiLEeKhlde44nL67A" portName="outNToB" portType="OUTPUT_PORT" incomingLinks="_fCfz8RiLEeKhlde44nL67A" outgoingLinks="_fCf0CxiLEeKhlde44nL67A"/>
+        <coupledModels xmi:type="CoupledModelInstance" xmi:id="_fCfzmRiLEeKhlde44nL67A" instanceName="AccessNetWorkA">
+          <modelType xmi:type="CoupledModelType" xmi:id="_fCfzmhiLEeKhlde44nL67A" modelName="AccessNetWorkA">
+            <ports xmi:type="CoupledPort" xmi:id="_fCfzmxiLEeKhlde44nL67A" portName="inAToS" incomingLinks="_fCfz7hiLEeKhlde44nL67A"/>
+            <ports xmi:type="CoupledPort" xmi:id="_fCfznBiLEeKhlde44nL67A" portName="inFToS" incomingLinks="_fCfz8xiLEeKhlde44nL67A"/>
+            <ports xmi:type="CoupledPort" xmi:id="_fCfznRiLEeKhlde44nL67A" portName="outSToA" portType="OUTPUT_PORT" outgoingLinks="_fCfz7xiLEeKhlde44nL67A"/>
+            <ports xmi:type="CoupledPort" xmi:id="_fCfznhiLEeKhlde44nL67A" portName="outSToF" portType="OUTPUT_PORT" outgoingLinks="_fCfz8hiLEeKhlde44nL67A"/>
+            <atomicModels xmi:type="AtomicModelInstance" xmi:id="_fCfznxiLEeKhlde44nL67A" instanceName="subnetAToF">
+              <modelType xmi:type="CPPAtomicModelType" xmi:id="_fCfzoBiLEeKhlde44nL67A" modelName="Subnet" defined="true" sourceFileRelativePath="subnet.cpp">
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfzoRiLEeKhlde44nL67A" portName="in"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfzohiLEeKhlde44nL67A" portName="out" portType="OUTPUT_PORT"/>
+                <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_fCfzoxiLEeKhlde44nL67A" name="distribution"/>
+              </modelType>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzpBiLEeKhlde44nL67A" name="distribution" value="normal"/>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzpRiLEeKhlde44nL67A" name="mean" value="3"/>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzphiLEeKhlde44nL67A" name="deviation" value="1"/>
+            </atomicModels>
+            <atomicModels xmi:type="AtomicModelInstance" xmi:id="_fCfzpxiLEeKhlde44nL67A" instanceName="subnetFToA">
+              <modelType xmi:type="CPPAtomicModelType" xmi:id="_fCfzqBiLEeKhlde44nL67A" modelName="Subnet" defined="true" sourceFileRelativePath="subnet.cpp">
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfzqRiLEeKhlde44nL67A" portName="in"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfzqhiLEeKhlde44nL67A" portName="out" portType="OUTPUT_PORT"/>
+                <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_fCfzqxiLEeKhlde44nL67A" name="distribution"/>
+              </modelType>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzrBiLEeKhlde44nL67A" name="distribution" value="normal"/>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzrRiLEeKhlde44nL67A" name="mean" value="3"/>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzrhiLEeKhlde44nL67A" name="deviation" value="1"/>
+            </atomicModels>
+          </modelType>
+        </coupledModels>
+        <coupledModels xmi:type="CoupledModelInstance" xmi:id="_fCfzrxiLEeKhlde44nL67A" instanceName="AccessNetWorkB">
+          <modelType xmi:type="CoupledModelType" xmi:id="_fCfzsBiLEeKhlde44nL67A" modelName="AccessNetWorkB">
+            <ports xmi:type="CoupledPort" xmi:id="_fCfzsRiLEeKhlde44nL67A" portName="inBToS" incomingLinks="_fCfz8BiLEeKhlde44nL67A"/>
+            <ports xmi:type="CoupledPort" xmi:id="_fCfzshiLEeKhlde44nL67A" portName="inFToS" incomingLinks="_fCfz9RiLEeKhlde44nL67A"/>
+            <ports xmi:type="CoupledPort" xmi:id="_fCfzsxiLEeKhlde44nL67A" portName="outSToB" portType="OUTPUT_PORT" outgoingLinks="_fCfz8RiLEeKhlde44nL67A"/>
+            <ports xmi:type="CoupledPort" xmi:id="_fCfztBiLEeKhlde44nL67A" portName="outSToF" portType="OUTPUT_PORT" outgoingLinks="_fCfz9BiLEeKhlde44nL67A"/>
+            <atomicModels xmi:type="AtomicModelInstance" xmi:id="_fCfztRiLEeKhlde44nL67A" instanceName="subnetBToF">
+              <modelType xmi:type="CPPAtomicModelType" xmi:id="_fCfzthiLEeKhlde44nL67A" modelName="Subnet" defined="true" sourceFileRelativePath="subnet.cpp">
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfztxiLEeKhlde44nL67A" portName="in"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfzuBiLEeKhlde44nL67A" portName="out" portType="OUTPUT_PORT"/>
+                <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_fCfzuRiLEeKhlde44nL67A" name="distribution"/>
+              </modelType>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzuhiLEeKhlde44nL67A" name="distribution" value="normal"/>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzuxiLEeKhlde44nL67A" name="mean" value="3"/>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzvBiLEeKhlde44nL67A" name="deviation" value="1"/>
+            </atomicModels>
+            <atomicModels xmi:type="AtomicModelInstance" xmi:id="_fCfzvRiLEeKhlde44nL67A" instanceName="subnetFToB">
+              <modelType xmi:type="CPPAtomicModelType" xmi:id="_fCfzvhiLEeKhlde44nL67A" modelName="Subnet" defined="true" sourceFileRelativePath="subnet.cpp">
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfzvxiLEeKhlde44nL67A" portName="in"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfzwBiLEeKhlde44nL67A" portName="out" portType="OUTPUT_PORT"/>
+                <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_fCfzwRiLEeKhlde44nL67A" name="distribution"/>
+              </modelType>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzwhiLEeKhlde44nL67A" name="distribution" value="normal"/>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzwxiLEeKhlde44nL67A" name="mean" value="3"/>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfzxBiLEeKhlde44nL67A" name="deviation" value="1"/>
+            </atomicModels>
+          </modelType>
+        </coupledModels>
+        <coupledModels xmi:type="CoupledModelInstance" xmi:id="_fCfzxRiLEeKhlde44nL67A" instanceName="FileExchangeServer">
+          <modelType xmi:type="CoupledModelType" xmi:id="_fCfzxhiLEeKhlde44nL67A" modelName="FileExchangeServer">
+            <ports xmi:type="CoupledPort" xmi:id="_fCfzxxiLEeKhlde44nL67A" portName="inAToF" incomingLinks="_fCfz8hiLEeKhlde44nL67A"/>
+            <ports xmi:type="CoupledPort" xmi:id="_fCfzyBiLEeKhlde44nL67A" portName="inBToF" incomingLinks="_fCfz9BiLEeKhlde44nL67A"/>
+            <ports xmi:type="CoupledPort" xmi:id="_fCfzyRiLEeKhlde44nL67A" portName="requestIn" incomingLinks="_fCfz9hiLEeKhlde44nL67A"/>
+            <ports xmi:type="CoupledPort" xmi:id="_fCfzyhiLEeKhlde44nL67A" portName="outFToA" portType="OUTPUT_PORT" outgoingLinks="_fCfz8xiLEeKhlde44nL67A"/>
+            <ports xmi:type="CoupledPort" xmi:id="_fCfzyxiLEeKhlde44nL67A" portName="outFToB" portType="OUTPUT_PORT" outgoingLinks="_fCfz9RiLEeKhlde44nL67A"/>
+            <atomicModels xmi:type="AtomicModelInstance" xmi:id="_fCfzzBiLEeKhlde44nL67A" instanceName="tmpfilereadthread">
+              <modelType xmi:type="CPPAtomicModelType" xmi:id="_fCfzzRiLEeKhlde44nL67A" modelName="TmpFileReadThread" defined="true" sourceFileRelativePath="tmpFileThread.cpp">
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfzzhiLEeKhlde44nL67A" portName="storeData"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfzzxiLEeKhlde44nL67A" portName="dataOut" portType="OUTPUT_PORT"/>
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfz0BiLEeKhlde44nL67A" portName="deleteData"/>
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfz0RiLEeKhlde44nL67A" portName="requestData"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz0hiLEeKhlde44nL67A" portName="dataOut" portType="OUTPUT_PORT"/>
+              </modelType>
+            </atomicModels>
+            <atomicModels xmi:type="AtomicModelInstance" xmi:id="_fCfz0xiLEeKhlde44nL67A" instanceName="tmpfilewritethread">
+              <modelType xmi:type="CPPAtomicModelType" xmi:id="_fCfz1BiLEeKhlde44nL67A" modelName="TmpFileWriteThread" defined="true" sourceFileRelativePath="tmpFileThread.cpp">
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfz1RiLEeKhlde44nL67A" portName="storeData"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz1hiLEeKhlde44nL67A" portName="dataOut" portType="OUTPUT_PORT"/>
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfz1xiLEeKhlde44nL67A" portName="deleteData"/>
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfz2BiLEeKhlde44nL67A" portName="requestData"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz2RiLEeKhlde44nL67A" portName="dataOut" portType="OUTPUT_PORT"/>
+              </modelType>
+            </atomicModels>
+            <atomicModels xmi:type="AtomicModelInstance" xmi:id="_fCfz2hiLEeKhlde44nL67A" instanceName="fileserverreceiver">
+              <modelType xmi:type="CPPAtomicModelType" xmi:id="_fCfz2xiLEeKhlde44nL67A" modelName="Receiver" defined="true" sourceFileRelativePath="receiver.cpp">
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfz3BiLEeKhlde44nL67A" portName="in"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz3RiLEeKhlde44nL67A" portName="out" portType="OUTPUT_PORT"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz3hiLEeKhlde44nL67A" portName="outData" portType="OUTPUT_PORT"/>
+                <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_fCfz3xiLEeKhlde44nL67A" name="preparation"/>
+              </modelType>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfz4BiLEeKhlde44nL67A" name="preparation" value="00:00:10:000"/>
+            </atomicModels>
+            <atomicModels xmi:type="AtomicModelInstance" xmi:id="_fCfz4RiLEeKhlde44nL67A" instanceName="fileserversender">
+              <modelType xmi:type="CPPAtomicModelType" xmi:id="_fCfz4hiLEeKhlde44nL67A" modelName="FileServerSender" defined="true" sourceFileRelativePath="fileServerSender.cpp">
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfz4xiLEeKhlde44nL67A" portName="requestIn"/>
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfz5BiLEeKhlde44nL67A" portName="ackIn"/>
+                <ports xmi:type="InputAtomicPort" xmi:id="_fCfz5RiLEeKhlde44nL67A" portName="dataIn"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz5hiLEeKhlde44nL67A" portName="dataOut" portType="OUTPUT_PORT"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz5xiLEeKhlde44nL67A" portName="fileSent" portType="OUTPUT_PORT"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz6BiLEeKhlde44nL67A" portName="ackReceived" portType="OUTPUT_PORT"/>
+                <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz6RiLEeKhlde44nL67A" portName="requestData" portType="OUTPUT_PORT"/>
+                <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_fCfz6hiLEeKhlde44nL67A" name="preparation"/>
+                <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_fCfz6xiLEeKhlde44nL67A" name="timeout"/>
+              </modelType>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfz7BiLEeKhlde44nL67A" name="preparation" value="00:00:10:000"/>
+              <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCfz7RiLEeKhlde44nL67A" name="timeout" value="00:00:20:000"/>
+            </atomicModels>
+          </modelType>
+        </coupledModels>
+        <links xmi:type="CoupledLink" xmi:id="_fCfz7hiLEeKhlde44nL67A" target="_fCfzmxiLEeKhlde44nL67A" source="_fCfzlBiLEeKhlde44nL67A"/>
+        <links xmi:type="CoupledLink" xmi:id="_fCfz7xiLEeKhlde44nL67A" target="_fCfzlxiLEeKhlde44nL67A" source="_fCfznRiLEeKhlde44nL67A"/>
+        <links xmi:type="CoupledLink" xmi:id="_fCfz8BiLEeKhlde44nL67A" target="_fCfzsRiLEeKhlde44nL67A" source="_fCfzlRiLEeKhlde44nL67A"/>
+        <links xmi:type="CoupledLink" xmi:id="_fCfz8RiLEeKhlde44nL67A" target="_fCfzmBiLEeKhlde44nL67A" source="_fCfzsxiLEeKhlde44nL67A"/>
+        <links xmi:type="CoupledLink" xmi:id="_fCfz8hiLEeKhlde44nL67A" target="_fCfzxxiLEeKhlde44nL67A" source="_fCfznhiLEeKhlde44nL67A"/>
+        <links xmi:type="CoupledLink" xmi:id="_fCfz8xiLEeKhlde44nL67A" target="_fCfznBiLEeKhlde44nL67A" source="_fCfzyhiLEeKhlde44nL67A"/>
+        <links xmi:type="CoupledLink" xmi:id="_fCfz9BiLEeKhlde44nL67A" target="_fCfzyBiLEeKhlde44nL67A" source="_fCfztBiLEeKhlde44nL67A"/>
+        <links xmi:type="CoupledLink" xmi:id="_fCfz9RiLEeKhlde44nL67A" target="_fCfzshiLEeKhlde44nL67A" source="_fCfzyxiLEeKhlde44nL67A"/>
+        <links xmi:type="CoupledLink" xmi:id="_fCfz9hiLEeKhlde44nL67A" target="_fCfzyRiLEeKhlde44nL67A" source="_fCfzlhiLEeKhlde44nL67A"/>
+      </modelType>
+    </coupledModels>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_fCfz9xiLEeKhlde44nL67A" instanceName="UA">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_fCfz-BiLEeKhlde44nL67A" modelName="Sender" defined="true" sourceFileRelativePath="sender.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_fCfz-RiLEeKhlde44nL67A" portName="controlIn" incomingLinks="_fCf0CRiLEeKhlde44nL67A"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_fCfz-hiLEeKhlde44nL67A" portName="ackIn" incomingLinks="_fCf0DRiLEeKhlde44nL67A"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz-xiLEeKhlde44nL67A" portName="dataOut" portType="OUTPUT_PORT" outgoingLinks="_fCf0ChiLEeKhlde44nL67A"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz_BiLEeKhlde44nL67A" portName="fileSent" portType="OUTPUT_PORT" outgoingLinks="_fCf0DhiLEeKhlde44nL67A"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_fCfz_RiLEeKhlde44nL67A" portName="ackReceived" portType="OUTPUT_PORT" outgoingLinks="_fCf0DxiLEeKhlde44nL67A"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_fCfz_hiLEeKhlde44nL67A" name="preparation"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_fCfz_xiLEeKhlde44nL67A" name="timeout"/>
+      </modelType>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCf0ABiLEeKhlde44nL67A" name="preparation" value="00:00:10:000"/>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCf0ARiLEeKhlde44nL67A" name="timeout" value="00:00:20:000"/>
+    </atomicModels>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_fCf0AhiLEeKhlde44nL67A" instanceName="UB">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_fCf0AxiLEeKhlde44nL67A" modelName="Receiver" defined="true" sourceFileRelativePath="receiver.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_fCf0BBiLEeKhlde44nL67A" portName="in" incomingLinks="_fCf0CxiLEeKhlde44nL67A"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_fCf0BRiLEeKhlde44nL67A" portName="out" portType="OUTPUT_PORT" outgoingLinks="_fCf0DBiLEeKhlde44nL67A"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_fCf0BhiLEeKhlde44nL67A" portName="outData" portType="OUTPUT_PORT" outgoingLinks="_fCf0EBiLEeKhlde44nL67A"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_fCf0BxiLEeKhlde44nL67A" name="preparation"/>
+      </modelType>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_fCf0CBiLEeKhlde44nL67A" name="preparation" value="00:00:10:000"/>
+    </atomicModels>
+    <links xmi:type="CoupledLink" xmi:id="_fCf0CRiLEeKhlde44nL67A" target="_fCfz-RiLEeKhlde44nL67A" source="_fCfzkBiLEeKhlde44nL67A"/>
+    <links xmi:type="CoupledLink" xmi:id="_fCf0ChiLEeKhlde44nL67A" target="_fCfzlBiLEeKhlde44nL67A" source="_fCfz-xiLEeKhlde44nL67A"/>
+    <links xmi:type="CoupledLink" xmi:id="_fCf0CxiLEeKhlde44nL67A" target="_fCf0BBiLEeKhlde44nL67A" source="_fCfzmBiLEeKhlde44nL67A"/>
+    <links xmi:type="CoupledLink" xmi:id="_fCf0DBiLEeKhlde44nL67A" target="_fCfzlRiLEeKhlde44nL67A" source="_fCf0BRiLEeKhlde44nL67A"/>
+    <links xmi:type="CoupledLink" xmi:id="_fCf0DRiLEeKhlde44nL67A" target="_fCfz-hiLEeKhlde44nL67A" source="_fCfzlxiLEeKhlde44nL67A"/>
+    <links xmi:type="CoupledLink" xmi:id="_fCf0DhiLEeKhlde44nL67A" target="_fCWpoRiLEeKhlde44nL67A" source="_fCfz_BiLEeKhlde44nL67A"/>
+    <links xmi:type="CoupledLink" xmi:id="_fCf0DxiLEeKhlde44nL67A" target="_fCWpohiLEeKhlde44nL67A" source="_fCfz_RiLEeKhlde44nL67A"/>
+    <links xmi:type="CoupledLink" xmi:id="_fCf0EBiLEeKhlde44nL67A" target="_fCWpoxiLEeKhlde44nL67A" source="_fCf0BhiLEeKhlde44nL67A"/>
+    <links xmi:type="CoupledLink" xmi:id="_fCf0ERiLEeKhlde44nL67A" target="_fCfzlhiLEeKhlde44nL67A" source="_fCfzkRiLEeKhlde44nL67A"/>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_fFLUIBiLEeKhlde44nL67A" type="DEVS" element="_fCWpoBiLEeKhlde44nL67A" name="offLineFileTransferMA.madesigner" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_fFLUIRiLEeKhlde44nL67A"/>
+  </notation:Diagram>
+</xmi:XMI>

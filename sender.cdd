@@ -1,0 +1,19 @@
+[Top]
+in:controlIn 
+out:dataOut fileSent ackReceived 
+var:iAck iSending iFileNum 
+state:passive sending waiting ack 
+initial:passive
+ext:passive sending controlIn?1{iSending=1;iAck=0;}
+int:sending waiting {iSending=0;}
+int:waiting sending {iSending=1;}
+int:ack sending {iAck=0;iSending=1;}
+ext:waiting ack ackIn?1{iAck=1;iSending=0;}
+int:ack passive {iAck=0;iSending=0;}
+passive:infinite
+sending:00:00:10:00
+waiting:00:00:20:00
+ack:00:00:00:00
+iAck:0
+iSending:0
+iFileNum:0

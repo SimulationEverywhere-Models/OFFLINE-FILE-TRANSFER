@@ -1,0 +1,19 @@
+[Top]
+in:deleteData requestData 
+out:dataOut 
+var:iCurFile iReading iDeleting tmpFile.front() tmpFile.empty() fileNotFound 
+state:idle delateData readData 
+initial:idle
+ext:idle delateData deleteData?1{iDeleting=1;}
+ext:idle readData requestData?1{iReading=1;}
+int:readData idle {iReading=0;iCurFile=0;}
+int:delateData idle {iDeleting=0;}
+idle:infinite
+delateData:00:00:00:00
+readData:00:00:00:00
+iCurFile:0
+iReading:0
+iDeleting:0
+tmpFile.front():0
+tmpFile.empty():0
+fileNotFound:1

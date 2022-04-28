@@ -1,0 +1,25 @@
+[fileServerSender]
+in : requestIn:int ackIn:int dataIn:int 
+out : requestData:int ackReceived:int fileSent:int dataOut:int 
+var : iAck iRequestData iDone iCurFile iSending iAbt 
+state : idle waitForFileServer sendData watiUB delateData 
+initial: idle
+ext : idle waitForFileServer Greater(requestIn,0)?1{iRequestData=1;iDone=0;iAbt=Divide(Add(iAbt,1),2);}
+ext : waitForFileServer sendData dataIn?1{iSending=1;iAck=0;iRequestData=0;iAbt=Divide(Add(iAbt,1),2);}
+int : sendData watiUB dataOut!iCurFile {iSending=0;}
+ext : watiUB delateData And(Any(ackIn),Equal(ackIn,iAbt))?1{iAck=1;iSending=0;}
+int : watiUB sendData {iSending=1;}
+int : waitForFileServer waitForFileServer Value(requestData)!1
+ext : delateData idle Or(Equal(-1),Equal(-2))?1{iDone=1;iRequestData=0;iSending=0;iAck=0;}
+ext : delateData waitForFileServer dataIn?0{iRequestData=1;}
+idle : infinite
+waitForFileServer : 00:00:10:00
+sendData : 00:00:00:00
+watiUB : 00:00:20:00
+delateData : infinite
+iAck : 0
+iRequestData : 0
+iDone : 1
+iCurFile : 0
+iSending : 0
+iAbt : 0

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_wY7vMBX_EeKMw6JCb6K3-w" modelName="top" defined="true" sourceFileRelativePath="senderMA.ma">
+    <ports xmi:type="CoupledPort" xmi:id="_wY7vMRX_EeKMw6JCb6K3-w" portName="dataOut" portType="OUTPUT_PORT" incomingLinks="_wY7vQxX_EeKMw6JCb6K3-w"/>
+    <ports xmi:type="CoupledPort" xmi:id="_wY7vMhX_EeKMw6JCb6K3-w" portName="fileSent" portType="OUTPUT_PORT" incomingLinks="_wY7vRBX_EeKMw6JCb6K3-w"/>
+    <ports xmi:type="CoupledPort" xmi:id="_wY7vMxX_EeKMw6JCb6K3-w" portName="ackReceived" portType="OUTPUT_PORT" incomingLinks="_wY7vRRX_EeKMw6JCb6K3-w"/>
+    <ports xmi:type="CoupledPort" xmi:id="_wY7vNBX_EeKMw6JCb6K3-w" portName="controlIn" outgoingLinks="_wY7vQRX_EeKMw6JCb6K3-w"/>
+    <ports xmi:type="CoupledPort" xmi:id="_wY7vNRX_EeKMw6JCb6K3-w" portName="ackIn" outgoingLinks="_wY7vQhX_EeKMw6JCb6K3-w"/>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_wY7vNhX_EeKMw6JCb6K3-w" instanceName="sender">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_wY7vNxX_EeKMw6JCb6K3-w" modelName="Sender" defined="true" sourceFileRelativePath="sender.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_wY7vOBX_EeKMw6JCb6K3-w" portName="controlIn" incomingLinks="_wY7vQRX_EeKMw6JCb6K3-w"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_wY7vORX_EeKMw6JCb6K3-w" portName="ackIn" incomingLinks="_wY7vQhX_EeKMw6JCb6K3-w"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_wY7vOhX_EeKMw6JCb6K3-w" portName="dataOut" portType="OUTPUT_PORT" outgoingLinks="_wY7vQxX_EeKMw6JCb6K3-w"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_wY7vOxX_EeKMw6JCb6K3-w" portName="fileSent" portType="OUTPUT_PORT" outgoingLinks="_wY7vRBX_EeKMw6JCb6K3-w"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_wY7vPBX_EeKMw6JCb6K3-w" portName="ackReceived" portType="OUTPUT_PORT" outgoingLinks="_wY7vRRX_EeKMw6JCb6K3-w"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_wY7vPRX_EeKMw6JCb6K3-w" name="preparation"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_wY7vPhX_EeKMw6JCb6K3-w" name="timeout"/>
+      </modelType>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wY7vPxX_EeKMw6JCb6K3-w" name="preparation" value="00:00:10:000"/>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wY7vQBX_EeKMw6JCb6K3-w" name="timeout" value="00:00:20:000"/>
+    </atomicModels>
+    <links xmi:type="CoupledLink" xmi:id="_wY7vQRX_EeKMw6JCb6K3-w" target="_wY7vOBX_EeKMw6JCb6K3-w" source="_wY7vNBX_EeKMw6JCb6K3-w"/>
+    <links xmi:type="CoupledLink" xmi:id="_wY7vQhX_EeKMw6JCb6K3-w" target="_wY7vORX_EeKMw6JCb6K3-w" source="_wY7vNRX_EeKMw6JCb6K3-w"/>
+    <links xmi:type="CoupledLink" xmi:id="_wY7vQxX_EeKMw6JCb6K3-w" target="_wY7vMRX_EeKMw6JCb6K3-w" source="_wY7vOhX_EeKMw6JCb6K3-w"/>
+    <links xmi:type="CoupledLink" xmi:id="_wY7vRBX_EeKMw6JCb6K3-w" target="_wY7vMhX_EeKMw6JCb6K3-w" source="_wY7vOxX_EeKMw6JCb6K3-w"/>
+    <links xmi:type="CoupledLink" xmi:id="_wY7vRRX_EeKMw6JCb6K3-w" target="_wY7vMxX_EeKMw6JCb6K3-w" source="_wY7vPBX_EeKMw6JCb6K3-w"/>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_wY7vRhX_EeKMw6JCb6K3-w" type="DEVS" element="_wY7vMBX_EeKMw6JCb6K3-w" name="senderMA.madesigner" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_wY7vRxX_EeKMw6JCb6K3-w"/>
+  </notation:Diagram>
+</xmi:XMI>

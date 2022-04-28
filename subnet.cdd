@@ -1,0 +1,14 @@
+[Top]
+in:in 
+out:out 
+var:msg.value() iPacket iIndex iPacket=msg.value() 
+state:idle active 
+initial:idle
+ext:idle active in?1{iIndex=Add(iIndex,1);iPacket=msg.value();}
+int:active idle out!iPacket 
+idle:00:00:00:00
+active:00:00:00:00
+msg.value():20
+iPacket:0
+iIndex:0
+iPacket=msg.value():0

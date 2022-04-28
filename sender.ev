@@ -1,0 +1,12 @@
+00:00:00:00 controlIn -1
+00:00:05:00 controlIn 0
+00:00:10:00 ackIn 0
+00:00:15:00 controlIn 5
+00:00:30:00 ackIn 1
+00:01:30:00 ackIn 0
+00:01:55:00 ackIn 1
+00:02:20:00 ackIn 1
+00:02:45:00 ackIn 0
+00:02:50:00 controlIn 3
+00:02:55:00 ackIn 1
+

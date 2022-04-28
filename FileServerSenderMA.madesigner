@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_DKaKcBWuEeK4vcE8039_bw" modelName="top" defined="true" sourceFileRelativePath="FileServerSenderMA.ma">
+    <ports xmi:type="CoupledPort" xmi:id="_DKaKcRWuEeK4vcE8039_bw" portName="requestData" portType="OUTPUT_PORT" incomingLinks="_DKaKiBWuEeK4vcE8039_bw"/>
+    <ports xmi:type="CoupledPort" xmi:id="_DKaKchWuEeK4vcE8039_bw" portName="ackReceived" portType="OUTPUT_PORT" incomingLinks="_DKaKiRWuEeK4vcE8039_bw"/>
+    <ports xmi:type="CoupledPort" xmi:id="_DKaKcxWuEeK4vcE8039_bw" portName="fileSent" portType="OUTPUT_PORT" incomingLinks="_DKaKihWuEeK4vcE8039_bw"/>
+    <ports xmi:type="CoupledPort" xmi:id="_DKaKdBWuEeK4vcE8039_bw" portName="dataOut" portType="OUTPUT_PORT" incomingLinks="_DKaKixWuEeK4vcE8039_bw"/>
+    <ports xmi:type="CoupledPort" xmi:id="_DKaKdRWuEeK4vcE8039_bw" portName="requestIn" outgoingLinks="_DKaKhxWuEeK4vcE8039_bw"/>
+    <ports xmi:type="CoupledPort" xmi:id="_DKaKdhWuEeK4vcE8039_bw" portName="dataIn" outgoingLinks="_DKaKhRWuEeK4vcE8039_bw"/>
+    <ports xmi:type="CoupledPort" xmi:id="_DKaKdxWuEeK4vcE8039_bw" portName="ackIn" outgoingLinks="_DKaKhhWuEeK4vcE8039_bw"/>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_DKaKeBWuEeK4vcE8039_bw" instanceName="fileserversender">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_DKaKeRWuEeK4vcE8039_bw" modelName="FileServerSender" defined="true" sourceFileRelativePath="fileServerSender.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_DKaKehWuEeK4vcE8039_bw" portName="requestIn" incomingLinks="_DKaKhxWuEeK4vcE8039_bw"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_DKaKexWuEeK4vcE8039_bw" portName="ackIn" incomingLinks="_DKaKhhWuEeK4vcE8039_bw"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_DKaKfBWuEeK4vcE8039_bw" portName="dataIn" incomingLinks="_DKaKhRWuEeK4vcE8039_bw"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_DKaKfRWuEeK4vcE8039_bw" portName="dataOut" portType="OUTPUT_PORT" outgoingLinks="_DKaKixWuEeK4vcE8039_bw"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_DKaKfhWuEeK4vcE8039_bw" portName="fileSent" portType="OUTPUT_PORT" outgoingLinks="_DKaKihWuEeK4vcE8039_bw"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_DKaKfxWuEeK4vcE8039_bw" portName="ackReceived" portType="OUTPUT_PORT" outgoingLinks="_DKaKiRWuEeK4vcE8039_bw"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_DKaKgBWuEeK4vcE8039_bw" portName="requestData" portType="OUTPUT_PORT" outgoingLinks="_DKaKiBWuEeK4vcE8039_bw"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_DKaKgRWuEeK4vcE8039_bw" name="preparation"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_DKaKghWuEeK4vcE8039_bw" name="timeout"/>
+      </modelType>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_DKaKgxWuEeK4vcE8039_bw" name="preparation" value="00:00:10:000"/>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_DKaKhBWuEeK4vcE8039_bw" name="timeout" value="00:00:10:000"/>
+    </atomicModels>
+    <links xmi:type="CoupledLink" xmi:id="_DKaKhRWuEeK4vcE8039_bw" target="_DKaKfBWuEeK4vcE8039_bw" source="_DKaKdhWuEeK4vcE8039_bw"/>
+    <links xmi:type="CoupledLink" xmi:id="_DKaKhhWuEeK4vcE8039_bw" target="_DKaKexWuEeK4vcE8039_bw" source="_DKaKdxWuEeK4vcE8039_bw"/>
+    <links xmi:type="CoupledLink" xmi:id="_DKaKhxWuEeK4vcE8039_bw" target="_DKaKehWuEeK4vcE8039_bw" source="_DKaKdRWuEeK4vcE8039_bw"/>
+    <links xmi:type="CoupledLink" xmi:id="_DKaKiBWuEeK4vcE8039_bw" target="_DKaKcRWuEeK4vcE8039_bw" source="_DKaKgBWuEeK4vcE8039_bw"/>
+    <links xmi:type="CoupledLink" xmi:id="_DKaKiRWuEeK4vcE8039_bw" target="_DKaKchWuEeK4vcE8039_bw" source="_DKaKfxWuEeK4vcE8039_bw"/>
+    <links xmi:type="CoupledLink" xmi:id="_DKaKihWuEeK4vcE8039_bw" target="_DKaKcxWuEeK4vcE8039_bw" source="_DKaKfhWuEeK4vcE8039_bw"/>
+    <links xmi:type="CoupledLink" xmi:id="_DKaKixWuEeK4vcE8039_bw" target="_DKaKdBWuEeK4vcE8039_bw" source="_DKaKfRWuEeK4vcE8039_bw"/>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_DKaKjBWuEeK4vcE8039_bw" type="DEVS" element="_DKaKcBWuEeK4vcE8039_bw" name="FileServerSenderMA.madesigner" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DKaKjRWuEeK4vcE8039_bw"/>
+  </notation:Diagram>
+</xmi:XMI>

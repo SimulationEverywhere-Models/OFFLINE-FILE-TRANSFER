@@ -1,0 +1,12 @@
+[Top]
+in:in 
+out:out outdata 
+var:iFileReceived msgValue 
+state:idle active 
+initial:idle
+ext:idle active in?1{iFileReceived=msgValue;}
+int:active idle out!iFileReceived 
+idle:00:00:00:00
+active:00:00:00:00
+iFileReceived:0
+msgValue:0

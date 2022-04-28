@@ -1,0 +1,14 @@
+[Top]
+in:storeData 
+out:dataOut 
+var:iCurFile iWriting tempFile[n] tmpFile.push( iCurFile ) 
+state:idle storeData 
+initial:idle
+ext:idle storeData storeData?1{iWriting=1;tmpFile.push( iCurFile )=1;}
+int:storeData idle dataOut!iCurFile {iWriting=0;}
+idle:infinite
+storeData:00:00:00:00
+iCurFile:-1
+iWriting:0
+tempFile[n]:0
+tmpFile.push( iCurFile ):0

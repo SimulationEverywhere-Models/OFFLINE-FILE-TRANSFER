@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_ukLFwBbrEeKs6KcVIJH6aQ" modelName="top" defined="true" sourceFileRelativePath="FileExchangeServerMA.ma">
+    <ports xmi:type="CoupledPort" xmi:id="_ukLFwRbrEeKs6KcVIJH6aQ" portName="fileSent" portType="OUTPUT_PORT" incomingLinks="_ukLF7xbrEeKs6KcVIJH6aQ"/>
+    <ports xmi:type="CoupledPort" xmi:id="_ukLFwhbrEeKs6KcVIJH6aQ" portName="dataOut" portType="OUTPUT_PORT" incomingLinks="_ukLF7hbrEeKs6KcVIJH6aQ"/>
+    <ports xmi:type="CoupledPort" xmi:id="_ukLFwxbrEeKs6KcVIJH6aQ" portName="requestIn" portType="OUTPUT_PORT" outgoingLinks="_ukLF6hbrEeKs6KcVIJH6aQ"/>
+    <ports xmi:type="CoupledPort" xmi:id="_ukLFxBbrEeKs6KcVIJH6aQ" portName="ackIn" portType="OUTPUT_PORT" outgoingLinks="_ukLF8BbrEeKs6KcVIJH6aQ"/>
+    <ports xmi:type="CoupledPort" xmi:id="_ukLFxRbrEeKs6KcVIJH6aQ" portName="dataIn" portType="OUTPUT_PORT" outgoingLinks="_ukLF6BbrEeKs6KcVIJH6aQ"/>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_ukLFxhbrEeKs6KcVIJH6aQ" instanceName="tmpfilereadthread">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_ukLFxxbrEeKs6KcVIJH6aQ" modelName="TmpFileReadThread" defined="true" sourceFileRelativePath="tmpFileThread.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_ukLFyBbrEeKs6KcVIJH6aQ" portName="storeData"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_ukLFyhbrEeKs6KcVIJH6aQ" portName="deleteData" incomingLinks="_ukLF6xbrEeKs6KcVIJH6aQ"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_ukLFyxbrEeKs6KcVIJH6aQ" portName="requestData" incomingLinks="_ukLF7RbrEeKs6KcVIJH6aQ"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_ukLFzBbrEeKs6KcVIJH6aQ" portName="dataOut" portType="OUTPUT_PORT" outgoingLinks="_ukLF7BbrEeKs6KcVIJH6aQ"/>
+      </modelType>
+    </atomicModels>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_ukLFzRbrEeKs6KcVIJH6aQ" instanceName="tmpfilewritethread">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_ukLFzhbrEeKs6KcVIJH6aQ" modelName="TmpFileWriteThread" defined="true" sourceFileRelativePath="tmpFileThread.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_ukLFzxbrEeKs6KcVIJH6aQ" portName="storeData" incomingLinks="_ukLF6RbrEeKs6KcVIJH6aQ"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_ukLF0RbrEeKs6KcVIJH6aQ" portName="deleteData"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_ukLF0hbrEeKs6KcVIJH6aQ" portName="requestData"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_ukLF0xbrEeKs6KcVIJH6aQ" portName="dataOut" portType="OUTPUT_PORT"/>
+      </modelType>
+    </atomicModels>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_ukLF1BbrEeKs6KcVIJH6aQ" instanceName="fileserverreceiver">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_ukLF1RbrEeKs6KcVIJH6aQ" modelName="Receiver" defined="true" sourceFileRelativePath="receiver.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_ukLF1hbrEeKs6KcVIJH6aQ" portName="in" incomingLinks="_ukLF6BbrEeKs6KcVIJH6aQ"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_ukLF1xbrEeKs6KcVIJH6aQ" portName="out" portType="OUTPUT_PORT"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_ukLF2BbrEeKs6KcVIJH6aQ" portName="outData" portType="OUTPUT_PORT" outgoingLinks="_ukLF6RbrEeKs6KcVIJH6aQ"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_ukLF2RbrEeKs6KcVIJH6aQ" name="preparation"/>
+      </modelType>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_ukLF2hbrEeKs6KcVIJH6aQ" name="preparation" value="00:00:00:000"/>
+    </atomicModels>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_ukLF2xbrEeKs6KcVIJH6aQ" instanceName="fileserversender">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_ukLF3BbrEeKs6KcVIJH6aQ" modelName="FileServerSender" defined="true" sourceFileRelativePath="fileServerSender.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_ukLF3RbrEeKs6KcVIJH6aQ" portName="requestIn" incomingLinks="_ukLF6hbrEeKs6KcVIJH6aQ"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_ukLF3hbrEeKs6KcVIJH6aQ" portName="ackIn" incomingLinks="_ukLF8BbrEeKs6KcVIJH6aQ"/>
+        <ports xmi:type="InputAtomicPort" xmi:id="_ukLF3xbrEeKs6KcVIJH6aQ" portName="dataIn" incomingLinks="_ukLF7BbrEeKs6KcVIJH6aQ"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_ukLF4BbrEeKs6KcVIJH6aQ" portName="dataOut" portType="OUTPUT_PORT" outgoingLinks="_ukLF7hbrEeKs6KcVIJH6aQ"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_ukLF4RbrEeKs6KcVIJH6aQ" portName="fileSent" portType="OUTPUT_PORT" outgoingLinks="_ukLF7xbrEeKs6KcVIJH6aQ"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_ukLF4hbrEeKs6KcVIJH6aQ" portName="ackReceived" portType="OUTPUT_PORT" outgoingLinks="_ukLF6xbrEeKs6KcVIJH6aQ"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_ukLF4xbrEeKs6KcVIJH6aQ" portName="requestData" portType="OUTPUT_PORT" outgoingLinks="_ukLF7RbrEeKs6KcVIJH6aQ"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_ukLF5BbrEeKs6KcVIJH6aQ" name="preparation"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_ukLF5RbrEeKs6KcVIJH6aQ" name="timeout"/>
+      </modelType>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_ukLF5hbrEeKs6KcVIJH6aQ" name="preparation" value="00:00:10:000"/>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_ukLF5xbrEeKs6KcVIJH6aQ" name="timeout" value="00:00:10:000"/>
+    </atomicModels>
+    <links xmi:type="CoupledLink" xmi:id="_ukLF6BbrEeKs6KcVIJH6aQ" target="_ukLF1hbrEeKs6KcVIJH6aQ" source="_ukLFxRbrEeKs6KcVIJH6aQ"/>
+    <links xmi:type="CoupledLink" xmi:id="_ukLF6RbrEeKs6KcVIJH6aQ" target="_ukLFzxbrEeKs6KcVIJH6aQ" source="_ukLF2BbrEeKs6KcVIJH6aQ"/>
+    <links xmi:type="CoupledLink" xmi:id="_ukLF6hbrEeKs6KcVIJH6aQ" target="_ukLF3RbrEeKs6KcVIJH6aQ" source="_ukLFwxbrEeKs6KcVIJH6aQ"/>
+    <links xmi:type="CoupledLink" xmi:id="_ukLF6xbrEeKs6KcVIJH6aQ" target="_ukLFyhbrEeKs6KcVIJH6aQ" source="_ukLF4hbrEeKs6KcVIJH6aQ"/>
+    <links xmi:type="CoupledLink" xmi:id="_ukLF7BbrEeKs6KcVIJH6aQ" target="_ukLF3xbrEeKs6KcVIJH6aQ" source="_ukLFzBbrEeKs6KcVIJH6aQ"/>
+    <links xmi:type="CoupledLink" xmi:id="_ukLF7RbrEeKs6KcVIJH6aQ" target="_ukLFyxbrEeKs6KcVIJH6aQ" source="_ukLF4xbrEeKs6KcVIJH6aQ"/>
+    <links xmi:type="CoupledLink" xmi:id="_ukLF7hbrEeKs6KcVIJH6aQ" target="_ukLFwhbrEeKs6KcVIJH6aQ" source="_ukLF4BbrEeKs6KcVIJH6aQ"/>
+    <links xmi:type="CoupledLink" xmi:id="_ukLF7xbrEeKs6KcVIJH6aQ" target="_ukLFwRbrEeKs6KcVIJH6aQ" source="_ukLF4RbrEeKs6KcVIJH6aQ"/>
+    <links xmi:type="CoupledLink" xmi:id="_ukLF8BbrEeKs6KcVIJH6aQ" target="_ukLF3hbrEeKs6KcVIJH6aQ" source="_ukLFxBbrEeKs6KcVIJH6aQ"/>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_ukLF8RbrEeKs6KcVIJH6aQ" type="DEVS" element="_ukLFwBbrEeKs6KcVIJH6aQ" name="FileExchangeServerMA.madesigner" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_ukLF8hbrEeKs6KcVIJH6aQ"/>
+  </notation:Diagram>
+</xmi:XMI>

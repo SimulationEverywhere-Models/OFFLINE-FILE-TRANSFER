@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <GGADAtomicModelType xmi:id="_tfc_IBTXEeKx796SperRIg" sourceFileRelativePath="Top.cdd" initialState="_tBGLABTeEeKx796SperRIg">
+    <ports xmi:type="OutputAtomicPort" xmi:id="_gxfakBTeEeKx796SperRIg" portName="dataOut" portType="OUTPUT_PORT"/>
+    <ports xmi:type="InputAtomicPort" xmi:id="_YHD1gBToEeKx796SperRIg" portName="deleteData"/>
+    <ports xmi:type="InputAtomicPort" xmi:id="_i6_5MBToEeKx796SperRIg" portName="requestData"/>
+    <states xmi:type="State" xmi:id="_tBGLABTeEeKx796SperRIg" name="idle">
+      <timeAdvance xmi:type="TimeAdvance" xmi:id="_tBGLARTeEeKx796SperRIg" hour="99" minute="99" second="99" millisecond="99" infinite="true"/>
+    </states>
+    <states xmi:type="State" xmi:id="_JkDGwBTiEeKx796SperRIg" name="delateData">
+      <timeAdvance xmi:type="TimeAdvance" xmi:id="_JkDGwRTiEeKx796SperRIg"/>
+    </states>
+    <states xmi:type="State" xmi:id="_tnq0EBTkEeKx796SperRIg" name="readData">
+      <timeAdvance xmi:type="TimeAdvance" xmi:id="_tnq0ERTkEeKx796SperRIg"/>
+    </states>
+    <variables xmi:type="Variable" xmi:id="_pbjLMBTfEeKx796SperRIg" name="iCurFile">
+      <defaultValue xmi:type="Constant" xmi:id="_pbjLMRTfEeKx796SperRIg" value="0"/>
+    </variables>
+    <variables xmi:type="Variable" xmi:id="_vpf7MBTfEeKx796SperRIg" name="iReading">
+      <defaultValue xmi:type="Constant" xmi:id="_vpgiQBTfEeKx796SperRIg" value="0"/>
+    </variables>
+    <variables xmi:type="Variable" xmi:id="_y6H-cBTfEeKx796SperRIg" name="iDeleting">
+      <defaultValue xmi:type="Constant" xmi:id="_y6H-cRTfEeKx796SperRIg" value="0"/>
+    </variables>
+    <variables xmi:type="Variable" xmi:id="_dI-RYBUCEeKovZS5zMjZCQ" name="tmpFile.front()">
+      <defaultValue xmi:type="Constant" xmi:id="_dI-RYRUCEeKovZS5zMjZCQ" value="0"/>
+    </variables>
+    <variables xmi:type="Variable" xmi:id="_QzcXwBUFEeKovZS5zMjZCQ" name="tmpFile.empty()">
+      <defaultValue xmi:type="Constant" xmi:id="_QzcXwRUFEeKovZS5zMjZCQ" value="0"/>
+    </variables>
+    <variables xmi:type="Variable" xmi:id="_LJZzgBZtEeK7gvlb05PDDQ" name="fileNotFound">
+      <defaultValue xmi:type="Constant" xmi:id="_LJZzgRZtEeK7gvlb05PDDQ"/>
+    </variables>
+    <links xmi:type="ExternalTransition" xmi:id="_HYNBoBTfEeKx796SperRIg" target="_JkDGwBTiEeKx796SperRIg" source="_tBGLABTeEeKx796SperRIg">
+      <condition xmi:type="Condition" xmi:id="_DGNLgBTgEeKx796SperRIg">
+        <expression xmi:type="InputAtomicPort" xmi:id="_dJnU8BTeEeKx796SperRIg" portName="deleteData"/>
+        <value xmi:type="Constant" xmi:id="_DGNLgRTgEeKx796SperRIg"/>
+      </condition>
+      <actions xmi:type="Action" xmi:id="_NPKYgBTgEeKx796SperRIg" variable="_y6H-cBTfEeKx796SperRIg" expression="_NPKYgRTgEeKx796SperRIg">
+        <containedExpression xmi:type="Constant" xmi:id="_NPKYgRTgEeKx796SperRIg"/>
+      </actions>
+    </links>
+    <links xmi:type="ExternalTransition" xmi:id="_7q1wsBTgEeKx796SperRIg" target="_tnq0EBTkEeKx796SperRIg" source="_tBGLABTeEeKx796SperRIg">
+      <condition xmi:type="Condition" xmi:id="_PBli8BThEeKx796SperRIg">
+        <expression xmi:type="InputAtomicPort" xmi:id="_zqSwwBTXEeKx796SperRIg" portName="requestData"/>
+        <value xmi:type="Constant" xmi:id="_PBli8RThEeKx796SperRIg"/>
+      </condition>
+      <actions xmi:type="Action" xmi:id="_RCiHABThEeKx796SperRIg" variable="_vpf7MBTfEeKx796SperRIg" expression="_RCiHARThEeKx796SperRIg">
+        <containedExpression xmi:type="Constant" xmi:id="_RCiHARThEeKx796SperRIg"/>
+      </actions>
+    </links>
+    <links xmi:type="InternalTransition" xmi:id="_Jhb60BTmEeKx796SperRIg" target="_tBGLABTeEeKx796SperRIg" source="_tnq0EBTkEeKx796SperRIg">
+      <actions xmi:type="Action" xmi:id="_KGHRABTtEeKx796SperRIg" variable="_vpf7MBTfEeKx796SperRIg" expression="_KGHRARTtEeKx796SperRIg">
+        <containedExpression xmi:type="Constant" xmi:id="_KGHRARTtEeKx796SperRIg" value="0"/>
+      </actions>
+      <actions xmi:type="Action" xmi:id="_KGHRAhTtEeKx796SperRIg" variable="_pbjLMBTfEeKx796SperRIg" expression="_KGHRAxTtEeKx796SperRIg">
+        <containedExpression xmi:type="Constant" xmi:id="_KGHRAxTtEeKx796SperRIg" value="0"/>
+      </actions>
+    </links>
+    <links xmi:type="InternalTransition" xmi:id="_iYz94BUDEeKovZS5zMjZCQ" target="_tBGLABTeEeKx796SperRIg" source="_JkDGwBTiEeKx796SperRIg">
+      <actions xmi:type="Action" xmi:id="_J7OiwBUFEeKovZS5zMjZCQ" variable="_y6H-cBTfEeKx796SperRIg" expression="_J7OiwRUFEeKovZS5zMjZCQ">
+        <containedExpression xmi:type="Constant" xmi:id="_J7OiwRUFEeKovZS5zMjZCQ" value="0"/>
+      </actions>
+    </links>
+  </GGADAtomicModelType>
+  <notation:Diagram xmi:id="_tfc_IRTXEeKx796SperRIg" type="DEVSGGAD" element="_tfc_IBTXEeKx796SperRIg" name="tmpfilereadthread.ggaddesigner" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_gxgosBTeEeKx796SperRIg" type="2003" element="_gxfakBTeEeKx796SperRIg">
+      <children xmi:type="notation:Node" xmi:id="_gxhPwBTeEeKx796SperRIg" type="5003"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_gxgosRTeEeKx796SperRIg"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_gxgoshTeEeKx796SperRIg"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_gxgosxTeEeKx796SperRIg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gxgotBTeEeKx796SperRIg" x="770" y="125" width="81" height="86"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_tBHZIBTeEeKx796SperRIg" type="2001" element="_tBGLABTeEeKx796SperRIg">
+      <children xmi:type="notation:Node" xmi:id="_tBIAMBTeEeKx796SperRIg" type="5001"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_tBHZIRTeEeKx796SperRIg"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_tBHZIhTeEeKx796SperRIg"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_tBHZIxTeEeKx796SperRIg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tBHZJBTeEeKx796SperRIg" x="225" y="145" width="96" height="61"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_pbkZUBTfEeKx796SperRIg" type="2004" element="_pbjLMBTfEeKx796SperRIg">
+      <children xmi:type="notation:Node" xmi:id="_pblAYBTfEeKx796SperRIg" type="5004"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_pbkZURTfEeKx796SperRIg" fontName="微软雅黑"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pbkZUhTfEeKx796SperRIg" x="10" y="35" width="81" height="41"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_vphJUBTfEeKx796SperRIg" type="2004" element="_vpf7MBTfEeKx796SperRIg">
+      <children xmi:type="notation:Node" xmi:id="_vphwYBTfEeKx796SperRIg" type="5004"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_vphJURTfEeKx796SperRIg" fontName="微软雅黑"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vphJUhTfEeKx796SperRIg" x="10" y="70" width="126" height="31"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_y6JMkBTfEeKx796SperRIg" type="2004" element="_y6H-cBTfEeKx796SperRIg">
+      <children xmi:type="notation:Node" xmi:id="_y6JzoBTfEeKx796SperRIg" type="5004"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_y6JMkRTfEeKx796SperRIg" fontName="微软雅黑"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y6JMkhTfEeKx796SperRIg" x="10" y="105" width="101" height="41"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_JkEU4BTiEeKx796SperRIg" type="2001" element="_JkDGwBTiEeKx796SperRIg">
+      <children xmi:type="notation:Node" xmi:id="_JkE78BTiEeKx796SperRIg" type="5001"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_JkEU4RTiEeKx796SperRIg"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_JkEU4hTiEeKx796SperRIg"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_JkEU4xTiEeKx796SperRIg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JkEU5BTiEeKx796SperRIg" x="655" y="55" width="91" height="66"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_tnrbIBTkEeKx796SperRIg" type="2001" element="_tnq0EBTkEeKx796SperRIg">
+      <children xmi:type="notation:Node" xmi:id="_tnsCMBTkEeKx796SperRIg" type="5001"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_tnrbIRTkEeKx796SperRIg"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_tnrbIhTkEeKx796SperRIg"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_tnrbIxTkEeKx796SperRIg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tnrbJBTkEeKx796SperRIg" x="660" y="240" width="91" height="71"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_YHEckBToEeKx796SperRIg" type="2002" element="_YHD1gBToEeKx796SperRIg">
+      <children xmi:type="notation:Node" xmi:id="_YHFDoBToEeKx796SperRIg" type="5002"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_YHEckRToEeKx796SperRIg"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_YHEckhToEeKx796SperRIg"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_YHEckxToEeKx796SperRIg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YHEclBToEeKx796SperRIg" x="15" y="250" width="66" height="76"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_i7AgQBToEeKx796SperRIg" type="2002" element="_i6_5MBToEeKx796SperRIg">
+      <children xmi:type="notation:Node" xmi:id="_i7BHUBToEeKx796SperRIg" type="5002"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_i7AgQRToEeKx796SperRIg"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_i7AgQhToEeKx796SperRIg"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_i7AgQxToEeKx796SperRIg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i7AgRBToEeKx796SperRIg" x="15" y="335" width="81" height="81"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_dI_fgBUCEeKovZS5zMjZCQ" type="2004" element="_dI-RYBUCEeKovZS5zMjZCQ">
+      <children xmi:type="notation:Node" xmi:id="_dJAGkBUCEeKovZS5zMjZCQ" type="5004"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_dI_fgRUCEeKovZS5zMjZCQ" fontName="微软雅黑"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dI_fghUCEeKovZS5zMjZCQ" x="10" y="170" width="131" height="46"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Qzc-0BUFEeKovZS5zMjZCQ" type="2004" element="_QzcXwBUFEeKovZS5zMjZCQ">
+      <children xmi:type="notation:Node" xmi:id="_Qzdl4BUFEeKovZS5zMjZCQ" type="5004"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_Qzc-0RUFEeKovZS5zMjZCQ" fontName="微软雅黑"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qzc-0hUFEeKovZS5zMjZCQ" x="10" y="135" width="121" height="31"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_LJaakBZtEeK7gvlb05PDDQ" type="2004" element="_LJZzgBZtEeK7gvlb05PDDQ">
+      <children xmi:type="notation:Node" xmi:id="_LJbBoBZtEeK7gvlb05PDDQ" type="5004"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_LJaakRZtEeK7gvlb05PDDQ" fontName="微软雅黑"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LJaakhZtEeK7gvlb05PDDQ" x="10" y="195" width="126" height="36"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_tfc_IhTXEeKx796SperRIg"/>
+    <edges xmi:type="notation:Edge" xmi:id="_HYOPwBTfEeKx796SperRIg" type="4001" element="_HYNBoBTfEeKx796SperRIg" source="_tBHZIBTeEeKx796SperRIg" target="_JkEU4BTiEeKx796SperRIg">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_HYOPwRTfEeKx796SperRIg" routing="Rectilinear"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_HYOPwhTfEeKx796SperRIg" fontName="微软雅黑"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HYOPwxTfEeKx796SperRIg" points="[28, -2, -383, 46]$[28, -52, -383, -4]$[403, -52, -8, -4]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HYQsABTfEeKx796SperRIg" id="(0.28125,0.03278688524590164)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HYQsARTfEeKx796SperRIg" id="(0.08791208791208792,0.6666666666666666)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_7q2XwBTgEeKx796SperRIg" type="4001" element="_7q1wsBTgEeKx796SperRIg" source="_tBHZIBTeEeKx796SperRIg" target="_tnrbIBTkEeKx796SperRIg">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_7q2XwRTgEeKx796SperRIg" routing="Rectilinear"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_7q2XwhTgEeKx796SperRIg" fontName="微软雅黑"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7q2XwxTgEeKx796SperRIg" points="[21, 3, -341, -98]$[405, 3, 43, -98]$[405, 53, 43, -48]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7q40ABTgEeKx796SperRIg" id="(0.78125,0.6885245901639344)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7q5bEBTgEeKx796SperRIg" id="(0.02197802197802198,0.676056338028169)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_Jhch4BTmEeKx796SperRIg" type="4002" element="_Jhb60BTmEeKx796SperRIg" source="_tnrbIBTkEeKx796SperRIg" target="_tBHZIBTeEeKx796SperRIg">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_Jhch4RTmEeKx796SperRIg" routing="Rectilinear"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Jhch4hTmEeKx796SperRIg" fontName="微软雅黑"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Jhch4xTmEeKx796SperRIg" points="[-49, 29, 375, 83]$[-449, 29, -25, 83]$[-449, -50, -25, 4]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JhdI8BTmEeKx796SperRIg" id="(0.5384615384615384,0.22535211267605634)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JhdI8RTmEeKx796SperRIg" id="(0.625,0.9344262295081968)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_iY0k8BUDEeKovZS5zMjZCQ" type="4002" element="_iYz94BUDEeKovZS5zMjZCQ" source="_JkEU4BTiEeKx796SperRIg" target="_tBHZIBTeEeKx796SperRIg">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_iY0k8RUDEeKovZS5zMjZCQ" routing="Rectilinear"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_iY0k8hUDEeKovZS5zMjZCQ" fontName="微软雅黑"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iY1MABUDEeKovZS5zMjZCQ" points="[22, -4, 467, -89]$[22, -29, 467, -114]$[-430, -29, 15, -114]$[-430, 81, 15, -4]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iY3BMBUDEeKovZS5zMjZCQ" id="(0.2857142857142857,0.06060606060606061)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iY3BMRUDEeKovZS5zMjZCQ" id="(0.11458333333333333,0.06557377049180328)"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>
